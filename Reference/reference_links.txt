@@ -1,0 +1,8 @@
+REFERENCE LINKS
+===============
+Since I work on a couple of different computers, I thought it would be good to keep these here
+
+Fading: https://www.arduino.cc/en/tutorial/fading
+Random Blink: https://forum.arduino.cc/index.php?topic=5496.0
+LEDstrip Effects for NeoPixel and FastLED: https://www.tweaking4all.com/hardware/arduino/adruino-led-strip-effects/#LEDStripEffectFire
+An LED Effect for Every Occaision: https://hackaday.com/2018/03/28/an-led-effect-for-every-occasion/
