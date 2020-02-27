@@ -15,21 +15,21 @@ Do **not** put the opening braces, also redundently called curly braces) for a b
 
 '''
 
-##### DO ####
-for(i=0; i<=100; i++) {
-	while(true) {
-		// Put your own code here
+	##### DO ####
+	for(i=0; i<=100; i++) {
+		while(true) {
+			// Put your own code here
+		}
 	}
-}
 
-##### DON'T #####
-for(i=0; i<=100; i++)
-{
-	while(true)
+	##### DON'T #####
+	for(i=0; i<=100; i++)
 	{
-		// Put your own code here
+		while(true)
+		{
+			// Put your own code here
+		}
 	}
-}
 
 '''
 
