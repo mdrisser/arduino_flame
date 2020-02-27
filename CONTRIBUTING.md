@@ -69,7 +69,7 @@ Parenthesis that are a part of a statement, such as a function declaration, for 
 - Constants should start with a capital letter and have an underscore between words, with each word captialized, `This_Const`
 - Defines should be in all caps, with an underscore between 'words', `MY_DEF`
 
-
+'''
 
 	##### DO #####
 	define MY_DEF 13;
