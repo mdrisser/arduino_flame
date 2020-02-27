@@ -25,10 +25,10 @@
  * They are declared as constants(const) since they will not change
  * value during code execution.
  */
-const int THRESHOLD_1 = 150;
-const int THRESHOLD_2 = 100;
-const int THRESHOLD_3 = 55;
-const int THRESHOLD_4 = 20;
+const int Threshold_1 = 150;
+const int Threshold_2 = 100;
+const int Threshold_3 = 55;
+const int Threshold_4 = 20;
 
 /*
  * Assign LEDs to the appropriate pins. The pins selected are
@@ -58,29 +58,29 @@ const int LED_5 = 10;
 void fade(int increment, int wait) {
 	// Loop from 255 down to 0, using the specified increment, or
 	// in this case decrement...
-	for(int fadeValue = 255; fadeValue >= 0; fadeValue -= increment) {
+	for(int fade_value = 255; fade_value >= 0; fade_value -= increment) {
 		// Send a PWM signal that effectively dims the LED
-		analogWrite(LED_2, fadeValue);
+		analogWrite(LED_2, fade_value);
 
 		// Once we reach predefined thresholds, start dimming the
 		// next LED in line...
-		if(fadeValue > THRESHOLD_1) {
-			analogWrite(LED_1, fadeValue);
+		if(fade_value > Threshold_1) {
+			analogWrite(LED_1, fade_value);
 		}
 
 		// ... and the next...
-		if(fadeValue > THRESHOLD_2) {
-			analogWrite(LED_3, fadeValue - 60);
+		if(fade_value > Threshold_2) {
+			analogWrite(LED_3, fade_value - 60);
 		}
 
 		// ... and the next...
-		if(fadeValue > THRESHOLD_3) {
-			analogWrite(LED_4, fadeValue - 80);
+		if(fade_value > Threshold_3) {
+			analogWrite(LED_4, fade_value - 80);
 		}
 
 		// ... and the next...
-		if(fadeValue > THRESHOLD_4) {
-			analogWrite(LED_4, fadeValue - 100);
+		if(fade_value > Threshold_4) {
+			analogWrite(LED_4, fade_value - 100);
 		}
 
 		// Wait the specified number of milliseconds, then continue back at
@@ -93,23 +93,23 @@ void fade(int increment, int wait) {
 
 	// This loop is the reverse of the loop above, instead of dimming
 	// the LEDs, we're going to make them brighter
-	for(int fadeValue = 255; fadeValue >= 0; fadeValue += increment) {
-		analogWrite(LED_2, fadeValue);
+	for(int fade_value = 255; fade_value >= 0; fade_value += increment) {
+		analogWrite(LED_2, fade_value);
 
-		if(fadeValue > THRESHOLD_1) {
-			analogWrite(LED_1, fadeValue);
+		if(fade_value > Threshold_1) {
+			analogWrite(LED_1, fade_value);
 		}
 
-		if(fadeValue > THRESHOLD_2) {
-			analogWrite(LED_3, fadeValue + 60);
+		if(fade_value > Threshold_2) {
+			analogWrite(LED_3, fade_value + 60);
 		}
 
-		if(fadeValue > THRESHOLD_3) {
-			analogWrite(LED_4, fadeValue + 80);
+		if(fade_value > Threshold_3) {
+			analogWrite(LED_4, fade_value + 80);
 		}
 
-		if(fadeValue > THRESHOLD_4) {
-			analogWrite(LED_4, fadeValue + 100);
+		if(fade_value > Threshold_4) {
+			analogWrite(LED_4, fade_value + 100);
 		}
 
 		// Again, wait the specified number of milliseconds...
