@@ -30,14 +30,14 @@
  */
 class Flame {
 	// Class Member variables; initialized at startup
-	int ledPin;	// Number of the LED pin
-	long OnTime;	// milliseconds of on time
-	long OffTime;	// milliseconds of off time
+	int led_pin;	// Number of the LED pin
+	long on_time;	// milliseconds of on time
+	long off_time;	// milliseconds of off time
 
 	// These two variables store the state of the LED
-	int ledState;					// The current state of the LED, either HIGH (on) or LOW (off)
+	int led_state;					// The current state of the LED, either HIGH (on) or LOW (off)
 
-	unsigned long previousMillis;	// Millis value of the previous update
+	unsigned long previous_millis;	// Millis value of the previous update
 								// We use an unsigned long because the value returned by millis()
 								// is an unsigned long. If we were to use a long, the value from
 								// millis() would overflow the long variable. (longs are smaller 
@@ -56,40 +56,40 @@ class Flame {
 	 * 		the amount of time, in milliseconds, to leave the LED off(LOW)
 	 */
 	public:Flame(int pin, long on, long off) {
-		ledPin = pin;				// Pin the LED is attached to
-		pinMode(ledPin, OUTPUT);	// Set the pin to be an output
+		led_pin = pin;				// Pin the LED is attached to
+		pinMode(led_pin, OUTPUT);	// Set the pin to be an output
 
-		OnTime = on;				// Amount of time (in milliseconds) that the LED should be on
-		OffTime = off;				// Amount of time (in milliseconds) that the LED should be off
+		on_time = on;				// Amount of time (in milliseconds) that the LED should be on
+		off_time = off;				// Amount of time (in milliseconds) that the LED should be off
 
-		ledState = LOW;				// Set the initial LED state to LOW (off)
-		previousMillis = 0;			// Set the initial perviousMillis value to zero
+		led_state = LOW;				// Set the initial LED state to LOW (off)
+		previous_millis = 0;			// Set the initial perviousMillis value to zero
 	}
   
 	/*
-	 * Function: Update(unsigned long currentMillis)
+	 * Function: Update(unsigned long current_millis)
 	 * 		turns the LEDs on and off, determined by the OnTime and
 	 * 		OffTime variables to create the flame effect.
 	 * 
-	 * Parameter: unsigned long currentMillis
+	 * Parameter: unsigned long current_millis
 	 * 		stores the value returned by millis(), this value is used to
 	 * 		calculate whether or not to change the state of the LED
 	 */
-	void Update(unsigned long currentMillis) {
+	void update(unsigned long current_millis) {
 		// If the LED is on and it's time to turn it off...
-		if((ledState == HIGH) && (currentMillis - previousMillis >= OnTime)) {
+		if((led_state == HIGH) && (current_millis - previous_millis >= on_time)) {
 			ledState = LOW;  // ...turn it off
 
 		// If the LED is off and it's time to turn it on...
-		} else if ((ledState == LOW) && (currentMillis - previousMillis >= OffTime)) {
-			ledState = HIGH;  // ...turn it on
+		} else if((led_state == LOW) && (current_millis - previous_millis >= off_time)) {
+			led_state = HIGH;  // ...turn it on
 		}
 
 		// I have moved these two lines out of the if statement
 		// above as they are the same for both the if and else, no
 		// need to duplicate them
 		digitalWrite(ledPin, ledState); // Update the LED
-		previousMillis = currentMillis; // Remember the time
+		previous_millis = current_millis; // Remember the time
 	}
 };
 
@@ -118,13 +118,13 @@ void setup() {
  * Interrupt is called once a millisecond, to update the LEDs
  */
 SIGNAL(TIMER0_COMPA_vect){
-	unsigned long currentMillis = millis();
+	unsigned long current_millis = millis();
 
-	led1.Update(currentMillis);
-	led2.Update(currentMillis);
-	led3.Update(currentMillis);
-	led4.Update(currentMillis);
-	led5.Update(currentMillis);
+	led1.update(current_millis);
+	led2.update(current_millis);
+	led3.update(current_millis);
+	led4.update(current_millis);
+	led5.update(current_millis);
 }
 
 /*
