@@ -88,9 +88,5 @@ class MyClass {
 		// More code
 	}
 }
-<<<<<<< HEAD
 
 '''
-=======
-'''
->>>>>>> 0e74e90352a3be912f475c9055015e4025a6f89f
