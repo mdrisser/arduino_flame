@@ -14,6 +14,7 @@ Indent using one tab, not spaces, per level of indentation. I know that some peo
 Do **not** put the opening braces, also redundently called curly braces) for a block of code on their own line, keep them on the same line as the rest of the opening of a block of code, with a single space just before them. The code between the opening and closing braces should be indented one more level. The closing brace should be on it's own line, at the same identation level as the opening line. The same goes for parentesis and brackets, also reduntantly known as square brackets.
 
 '''
+
 ##### DO ####
 for(i=0; i<=100; i++) {
 	while(true) {
@@ -29,12 +30,14 @@ for(i=0; i<=100; i++)
 		// Put your own code here
 	}
 }
+
 '''
 
 ### Parenthesis
 Parenthesis that are a part of a statement, such as a function declaration, for loop, while loop, etc. shoud **not** have a space before or sfter the opening paren, or before the closing paren.
 
 '''
+
 ##### DO #####
 void someFunction(int i, int j) {
 	for(i=0; i<=100; i++) {
@@ -44,7 +47,7 @@ void someFunction(int i, int j) {
 	}
 }
 
-##### DON'T#####
+##### DON'T #####
 void someFunction ( int i, int j )
 {
 	for ( i = 0; i <= 100; i++ )
@@ -55,6 +58,7 @@ void someFunction ( int i, int j )
 		}
 	}
 }
+
 '''
 
 ### Naming Classes, Function, Variables, Constants and Defines
@@ -66,6 +70,7 @@ void someFunction ( int i, int j )
 - Defines should be in all caps, with an underscore between 'words', `MY_DEF`
 
 '''
+
 ##### DO #####
 define MY_DEF 13;
 define MY_OTHER_DEF 10;
@@ -83,4 +88,5 @@ class MyClass {
 		// More code
 	}
 }
+
 '''
