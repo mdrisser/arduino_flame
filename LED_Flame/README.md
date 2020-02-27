@@ -1,10 +1,8 @@
-# LED Gas Flame
+# LED Flame Effect
 
-This is an alternative approach to creating the gas flame effect.
+This is the first of two sketches attempting to mimic a natural gas flame, I need to determine which approach works better.
 
-I need to determine which approch will work better.
-
-This sketch mimics a natural gas flame. It is based on a Jacklyn Smith Christmas Lantern purchased from Kmart. The effect looks very natural behind a piece of frosted glass.
+This sketch mimics a natural gas flame. It is based on a Jacklyn Smith Christmas Lantern purchased from Kmart. The effect looks very natural behind a peice of frosted glass.
 
 ## The Circuit
 Refer to the wiring diagram or the schematic for more information on the connections.
